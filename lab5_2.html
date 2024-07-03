@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>login page</title>
+</head>
+<body>
+     <input type="text" id="username" placeholder="Username">
+     <input type="password" id="password" placeholder="Password">
+     <button type="submit" onclick="answer()">submit</button>
+
+     <div id="succesmsg" style="color: green"></div>
+
+      <div id="errmsg" style="color: red"></div>
+
+     <script type="text/javascript">
+            function answer(){
+            const username = document.getElementById("username").value;
+            const userRegex = /^[a-zA-Z]{8}$/;
+            if(userRegex.test(username)){
+                alert("Valid");}
+          else{
+                alert("invlid");}
+             const password = document.getElementById("password").value;
+            const passRegex = /^[0-9]{10}$/;    
+            if(passRegex.test(password))
+                {alert("Valid");}
+            else{
+                alert("invlid");}
+
+}
+
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>prime no range</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let a =parseInt(prompt("enter here!!"));
+		let b =parseInt(prompt("enter here!!"));
+		for(i=a;i<=b;i++)
+		{ 
+				let count =0
+
+			for(j=2;j<=i;j++)
+			{
+				if(i%j==0)
+				{
+					count = 1
+					break;
+				}
+			}
+			if(i>1 && count ==0){
+				document.write(i)
+			}
+		}
+	
+	
+	</script>
+
+</body>
+</html>

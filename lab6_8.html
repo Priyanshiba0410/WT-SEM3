@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events Example</title>
+    <style>
+        h1 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Hover over me!</h1>
+    <button id="findTime">Find Time</button>
+    <button id="red">Change to Red</button>
+    <button id="green">Change to Green</button>
+
+    <script>
+        const heading = document.getElementById("heading");
+        const findTimeButton = document.getElementById("findTime");
+        const redButton = document.getElementById("red");
+        const greenButton = document.getElementById("green");
+
+        // Mouse over event
+        heading.addEventListener("mouseover", () => {
+            heading.style.color = "yellow";
+        });
+
+        // Mouse out event
+        heading.addEventListener("mouseout", () => {
+            heading.style.color = "black";
+        });
+
+        // Click event for "Find Time" button
+        findTimeButton.addEventListener("click", () => {
+            const now = new Date();
+            alert("Current date and time: " + now);
+        });
+
+        // Click event for "Red" button
+        redButton.addEventListener("click", () => {
+            document.body.style.backgroundColor = "red";
+        });
+
+        // Click event for "Green" button
+        greenButton.addEventListener("click", () => {
+            document.body.style.backgroundColor = "green";
+        });
+    </script>
+</body>
+</html>

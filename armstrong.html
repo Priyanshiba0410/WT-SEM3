@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Armstrong</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let n =parseInt(prompt("enter here!!"));
+		let temp=n
+		let ans=0
+		while(temp>0){
+			rem = temp%10
+			ans=ans+ rem *rem * rem
+			temp =parseInt(temp/10)
+		}
+		if(ans==n)
+		{
+			document.write("no. is armstrong")
+		}
+		else{
+			document.write("no is not armstrong")
+		}
+
+	</script>
+
+</body>
+</html>

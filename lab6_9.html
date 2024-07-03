@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Event Example</title>
+    <style>
+        body {
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener("keydown", (event) => {
+            const key = event.key.toLowerCase();
+            if (key === "a" || key === "e" || key === "i" || key === "o" || key === "u") {
+                alert("Vowel '" + key + "' is pressed.");
+            }
+        });
+
+        document.addEventListener("keyup", () => {
+            document.body.style.backgroundColor = "blue";
+        });
+    </script>
+</body>
+</html>

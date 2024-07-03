@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>swap two num and multi</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let a = parseInt(prompt("enter here"));
+		firstdigit = parseInt(a/10);
+			lastdigit = a%10;
+			let ans = 1;
+			for(i=1;i<=lastdigit;i++){
+				ans = firstdigit*ans;
+			}
+			document.write(ans);
+	</script>
+
+</body>
+</html>

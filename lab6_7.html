@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>curd</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		#form{
+			width:50%;
+			float: left;
+		}
+		#result{
+			margin-top: 20px;
+			width: 100%;
+			float: left;
+		}
+		#errMsg{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="form">
+		<input type="text" id="txtID" placeholder="Enter ID" /><br/>
+		<input type="text" id="txtName" /><br/>
+		<input type="text" id="txtRollNo" /><br/>
+		<input type="text" id="txtAvatar" /><br/>
+		<span id="errMsg"></span>
+		<br>
+		<button onclick="addStudent()" id="btn">Add</button>
+	</div>
+
+	<div id="result">
+		asdf
+	</div>
+
+	<script type="text/javascript">
+		students = [
+  {
+    "name": "Horace Nolan",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/201.jpg",
+    "rollNo": 49122,
+    "id": "1",
+  },
+
+  {
+    "name": "Connie Upton",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/154.jpg",
+    "rollNo": 72112,
+    "id": "2"
+  },
+  {
+    "name": "Josefina Toy",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/396.jpg",
+    "rollNo": 54213,
+    "id": "3"
+  },
+
+  {
+    "name": "Ms. Cynthia Abernathy",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/5.jpg",
+    "rollNo": 75871,
+    "id": "4"
+  },
+
+  {
+    "name": "Ruby Leannon Jr.",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1230.jpg",
+    "rollNo": 92907,
+    "id": "5"
+  },
+  {
+    "name": "Ollie Dibbert",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/457.jpg",
+    "rollNo": 14324,
+    "id": "6"
+  },
+  {
+    "name": "Cecelia Jast V",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1008.jpg",
+    "rollNo": 38564,
+    "id": "7"
+  },
+  {
+    "name": "Santiago Murphy",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/374.jpg",
+    "rollNo": 56799,
+    "id": "8"
+  },
+
+  {
+    "name": "Mr. Elmer Mohr",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/285.jpg",
+    "rollNo": 85203,
+    "id": "9"
+  },
+  {
+    "name": "Marlon Russel",
+    "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/406.jpg",
+    "rollNo": 1849,
+    "id": "10"
+  }
+];
+		idToEdit = -1;
+
+		function displayStudent(){
+			temp = document.getElementById("result");
+			tempString = "";
+			tempString += "<table border='1'>";
+			for(i=0;i<students.length;i++){
+				tempString += "<tr>";
+				tempString += "<td>"+students[i].id+"</td>";
+				tempString += "<td>"+students[i].name+"</td>";
+				tempString += "<td>"+students[i].rollNo+"</td>";
+				tempString += "<td><img width='50px' src='"+students[i].avatar+"'/></td>";
+				tempString += "<td><button onclick='deleteStudent("+i+")'>Delete</button></td>";
+				tempString += "<td><button onclick='setStudent("+i+")'>Edit</button></td>";
+				tempString += "</tr>";
+			}
+			tempString += "</table>";
+
+			temp.innerHTML = tempString;
+		}
+
+		displayStudent();
+
+		function setStudent(id){
+			idToEdit = id;
+			document.getElementById('btn').innerHTML = "Edit"
+			document.getElementById('txtName').value = students[id]
+		}
+
+
+		function addStudent(){
+			tempStudent = document.getElementById("txtName");
+			tempObj = {
+				id: document.getElementById('txtID').value,
+				name: document.getElementById('txtName').value,
+				rollNo: document.getElementById('txtRollNo').value,
+				avatar: document.getElementById('txtAvatar').value,
+			}
+
+			if(tempStudent.value==""){
+				//invalid
+				tempStudent.style.border="2px solid red";
+				document.getElementById('errMsg').innerHTML = "Please Enter Name"
+			}
+			else{
+				if(idToEdit>=0){
+					students[idToEdit] = tempObj;
+					idToEdit = -1;
+					document.getElementById('btn').innerHTML = "Add";
+				}
+				else{
+					students.push(tempObj);	
+				}
+
+				tempStudent.value = ""
+				displayStudent();
+			}
+		}
+
+		function deleteStudent(id){
+
+				students.splice(id,1);	
+				displayStudent();
+
+		}
+	</script>
+
+
+</body>
+</html>
+
+
+

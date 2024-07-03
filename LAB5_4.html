@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+	 <input type="text" id="username" placeholder="Username">
+     <input type="password" id="password" placeholder="Password">
+     <input type="password" id="RepeatPassword" placeholder="Password">
+     <input type="number" id="dob" placeholder="age">
+     <input type="number" id="enrollment" placeholder="Enroolment">
+     <input type="email" id="email" placeholder="Email">
+     <button type="submit" onclick="answer()">submit</button>
+
+     <div id="succesmsg" style="color: green"></div>
+
+      <div id="errmsg" style="color: red"></div>
+
+      <script type="text/javascript">
+      	
+      	function answer(){
+            const username = document.getElementById("username").value;
+            const userRegex = /^[a-zA-Z]{8}$/;
+            if(userRegex.test(username)){
+            	alert("Valid");}
+            	else{
+            		alert("Inalid");
+            	}
+            const password = document.getElementById("password").value;
+            const passRegex = /^(?=.\d)(?=.[!@#$%^&])[a-zA-Z\d!@#$%^&]{8,12}$/;	
+            if(passRegex.test(password)){
+            	alert("Valid");
+            }
+            else{
+            	alert("invlid");
+            }
+            const RepeatPassword = document.getElementById("RepeatPassword").value;
+            if(password!==RepeatPassword){
+            	alert("Inalid");
+            }
+           const age = document.getElementById("dob").value;
+           if(age<=18){
+
+            	alert("Valid");}
+            	else{
+            		alert("Inalid");
+            	
+           }
+           const enrollment = document.getElementById("enrollment").value;
+           const enrollmentRegex=/^\d{11}$/;
+            if(enrollmentRegex.test(enrollment)){
+            	alert("Valid");
+            }
+            else{
+            	alert("invlid");
+            }
+            const email = document.getElementById("email").value;
+            const emailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if(enrollmentRegex.test(enrollment)){
+            	alert("Valid");
+            }
+            else{
+            	alert("invlid");
+            }
+        }
+
+
+      </script>
+</body>
+</html>
