@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crud</title>
+   <h1>Crud Operation</h1>
+<input type="text" id="name" placeholder="enter hear">
+<button onclick="createFun()">Add</button>
+<div id="display"></div>
+<input type="number" name="" id="index" placeholder="enter index">
+<input type="text" name="" id="toUpdate" placeholder="enter value to update">
+<button onclick="Update()">Update</button>
+</head>
+<body>
+  <script type="text/javascript">
+    const arr=[];
+  const createFun=()=>{
+    console.log("creat Fun calld");
+    let name = document.getElementById("name");
+    arr.push(name.value);
+    name.value="";
+    console.log(arr);
+    readFun();
+  };
+
+const readFun=()=>{
+  let data = document.getElementById("display");
+  data.innerHTML=""
+  for (let i = 0; i<arr.length; i++) {
+    data.innerHTML+=arr[i]+`<button onclick="deletFun(${i})">delet</button>`+"<br/>";
+  }
+};
+
+const Update=()=>{
+  console.log("Update Fun calld");
+  let idx=document.getElementById("index").value;
+  let updatevalue=document.getElementById("toUpdate").value;
+  if(idx >=0 && idx < arr.length){
+    arr[idx] = updatevalue;
+  } 
+  else{
+    console.log("index not found");
+  }
+  console.log(arr);
+  readFun();
+};
+const deletFun=(index)=>{
+  console.log("delet Fun");
+arr.splice(index,1);
+console.log(arr);
+readFun();
+};
+
+  </script>
+</body>
+</html>
