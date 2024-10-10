@@ -1,0 +1,26 @@
+/* Footer.css */
+
+.footer {
+    width: 100%;
+    background: linear-gradient(to left, #ca4c09, #000000);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Add transition for background color */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  

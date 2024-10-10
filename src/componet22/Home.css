@@ -1,0 +1,107 @@
+
+#home {
+    text-align: center;
+    background: url('https://images5.alphacoders.com/349/thumb-1920-349822.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 695px;
+    backdrop-filter: grayscale(100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#home p {
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 6px 20px;
+    background-color: transparent;
+    color: black;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.primary {
+    font-size: 2.8rem;
+    font-family: 'Bree Serif', serif;
+}
+
+pre {
+    font-size: 26px;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1307px) {
+    #services {
+        margin: 34px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.section2 {
+    height: 800px;
+    width: 100vw;
+}
+
+.section2 p {
+    font-size: 13px;
+    margin: 11px 2px 29px 710px;
+    color: orangered;
+}
+
+.section2 h1 {
+    font-size: 47px;
+    margin-top: 1px;
+}
+
+.box {
+    display: flex;
+}
+
+.box1 {
+    height: 320px;
+    width: 45vw;
+    background-color: rgb(249, 168, 139);
+    margin-top: 35px;
+    margin-left: 180px;
+    margin-right: 20px;
+}
+
+.box2 {
+    height: 300px;
+    margin-top: 1px;
+    width: 40vw;
+}
+
+.box1 h2 {
+    margin: 14px;
+    font-size: 30px;
+}
+
+.content {
+    font-size: 16px;
+    text-align: justify;
+    padding: 10px 127px 2px 115px;
+}
+
+.box1 button {
+    height: 47px;
+    width: 174px;
+    font-size: 18px;
+    border: 2px solid white;
+    background-color: rgb(249, 168, 139);
+    margin: 5px 3px 4px 222px;
+    border-radius: 5px;
+}
+
+.img1 {
+    height: 300px;
+    width: 546px;
+    margin: 34px 0px 0px 0px;
+    box-shadow: 2px 2px 5px #ffff;
+}

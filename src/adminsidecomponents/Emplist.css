@@ -1,0 +1,64 @@
+/* Emplist.css */
+
+.employee-list-container {
+  max-height: calc(100vh - 100px); /* Set maximum height for the card container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.employee-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid layout with minimum card width */
+  gap: 20px; /* Gap between grid items */
+}
+
+.employee-item {
+  width: 100%; /* Set width to 100% for full screen */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+  background-color: #ffffff; /* Add background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.employee-item:hover {
+  transform: translateY(-5px); /* Move card up slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add larger box shadow on hover */
+}
+
+.employee-details {
+  padding: 20px;
+}
+
+.employee-actions {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Add animation for modal */
+.temp {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.temp1 {
+  margin: 0;
+  padding: 0;
+}
+
+.temp2 {
+  position: relative;
+}

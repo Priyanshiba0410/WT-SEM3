@@ -1,0 +1,111 @@
+/* Base styles */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64vh;
+  }
+  
+  .signup-form {
+    background: linear-gradient(135deg, #56CCF2, #2F80ED);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    width: 300px;
+    max-width: 90%;
+    position: relative;
+  }
+  
+  .signup-form:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2F80ED, #56CCF2);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .signup-form:hover:before {
+    opacity: 1;
+  }
+  
+  .signup-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    animation: fadeInDown 1s ease;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #fff;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    outline: none;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  button[type="submit"] {
+    background: linear-gradient(135deg, #FF4B2B, #FF416C);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards, pulse 2s infinite;
+  }
+  
+  button[type="submit"]:hover {
+    background: linear-gradient(135deg, #FF416C, #FF4B2B);
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 600px) {
+    .signup-form {
+      width: 90%;
+    }
+  }

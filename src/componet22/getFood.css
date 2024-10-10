@@ -1,0 +1,15 @@
+/* GetFood.css */
+
+.food-grid-container {
+    margin-left: 100px;
+    margin-right: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the minimum card width as needed */
+    gap: 30px;
+    justify-items: center;
+    max-height: 600px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+  } 
+  
+  /* Add your colorful design for the food cards here */
+  
